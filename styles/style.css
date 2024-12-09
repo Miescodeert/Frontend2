@@ -1,0 +1,373 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+section {
+  background-color: #ecd5ab;
+  padding-inline: 5%;
+}
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+  /* startje */
+  --color-text: #111;
+  --color-background: #eee;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.4em;
+}
+
+.button {
+  border: none;
+  color: #fffaea;
+  padding: 0.75em 1.5em;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 1.5em;
+  font-weight: 600;
+  font-size: small;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 9px #605f5f72;
+}
+
+.button1 {
+  background-color: #a64e17;
+}
+.button2 {
+  background-color: #afb376;
+  color: #422918;
+}
+.button3 {
+  background-color: #55601c;
+}
+.button4 {
+  background-color: #ecd5ab;
+  color: #422918;
+}
+.button5 {
+  background-color: #422918;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+p {
+  font-weight: 300;
+  font-size: small;
+}
+
+.ontdek span {
+  color: #422918;
+  text-transform: uppercase;
+  font-weight: 600;
+  transform: rotate(-3deg);
+  display: inline-block;
+}
+
+.ontdek h2 {
+  color: #a64e17;
+  text-transform: uppercase;
+  font-size: xx-large;
+  transform: rotate(-3deg);
+}
+
+.ontdek img {
+  margin-left: -6%;
+}
+.ontdek {
+  position: relative;
+}
+
+.binnenkomen-img {
+  position: absolute;
+  bottom: -20%;
+  right: 0;
+  width: 50%;
+}
+
+/* geen idee hoe ik die irritante afbeelding helemaal links gecentreerd krijg pfff. uiteindelijk hulp gehad van medestudent Bas. mbt margin-left in de min plaatsen */
+.zintuigen img {
+  margin-left: -6%;
+  margin-top: 50%;
+}
+.zintuigen p {
+  color: #422918;
+}
+
+.zintuigen h2 {
+  color: #a64e17;
+  text-transform: uppercase;
+  font-size: xx-large;
+}
+
+.zenmasters {
+  background-color: #55601c;
+}
+
+.zenmasters span {
+  color: #fffaea;
+  text-transform: uppercase;
+  font-weight: 600;
+  transform: rotate(-3deg);
+  display: inline-block; /* het lukt me niet om dit stukje tekst schuin te krijgen. Aan chatGPT gevraagd hoe dat kon en welke oplossing ervoor is. prompt: waarom wilt dit stukje tekst niet schuinstaan?. */
+}
+.zenmasters h2 {
+  transform: rotate(-3deg);
+  color: #afb376;
+  text-transform: uppercase;
+  font-size: xx-large;
+}
+
+.zenmasters p {
+  color: #fffaea;
+}
+
+.zenmasters img {
+  width: 17em;
+  height: 17em;
+  object-fit: cover;
+  transform: rotate(
+    -5deg
+  ); /*Hulp ChatGPT. Prompt: Hoe zorg ik ervoor dat een afbeelding schuin komt te staan?*/
+  margin: 3em;
+}
+
+.bestellenKnop {
+  color: #fffaea;
+}
+footer {
+  background-color: #422918;
+}
+
+/* code van DLO week 2 FED via codepen https://codepen.io/shooft/pen/JjQLVeB  maar werkt niet en snap er niks van*/
+section.streepjes li:nth-of-type(3) button {
+  padding: 0.5em 1em;
+  /* de aspect-ratio die voor alle buttons was ingesteld ongedaan maken */
+  aspect-ratio: unset;
+
+  /* een grid met 2 kolommen */
+  /* eerste kolom voor de spans (auto) */
+  /* tweede kolom voor de tekst (auto) */
+  /* .5em ruimte tussen de kolommen met gap */
+  /* de grid-kinderen met alalign-items-items in het midden van de grid-cellen positionern */
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.5em;
+  align-items: center;
+
+  /* ronde hoekjes en hoofdletters */
+  border-radius: 1.375em;
+  text-transform: uppercase;
+
+  /* transities duren .5s */
+  transition-duration: 0.5s;
+}
+
+/* alledrie de streepjes */
+section.streepjes li:nth-of-type(3) button span {
+  /* alledrie de spans in de eerste rij en tweede kolom */
+  /* ze staan dan over elkaar heen */
+  grid-row-start: 1;
+  grid-column-start: 2;
+
+  /* grootte en kleur van de streepjes */
+  width: 0.9rem;
+  height: 0.15rem;
+  background-color: var(--color-button-text);
+
+  /* transities duren .5s */
+  transition-duration: 0.5s;
+}
+
+/* het eerste streepje */
+section.streepjes li:nth-of-type(3) button span:nth-of-type(1) {
+  /* met transform: */
+  /* .3em omhoog */
+  transform: translateY(-0.3rem);
+}
+
+/* het tweede streepje 
+section.streepjes li:nth-of-type(3) button span:nth-of-type(2) {
+   staat al op de goede plek 
+}
+
+/* het derde streepje */
+section.streepjes li:nth-of-type(3) button span:nth-of-type(3) {
+  /* met transform: */
+  /* .3em omlaag */
+  transform: translateY(0.3rem);
+}
+
+/*********************************************************/
+/* als de DERDE STREEPJES BUTTON de class menuOpen heeft */
+/*********************************************************/
+
+section.streepjes li:nth-of-type(3) button[aria-expanded="true"] {
+  /* achtergrondkleur wijzigen naar --color-button-background-open */
+  background-color: var(--color-button-background-open);
+}
+
+/* het eerste streepje */
+section.streepjes
+  li:nth-of-type(3)
+  button[aria-expanded="true"]
+  span:nth-of-type(1) {
+  /* met transform: */
+  /* 1. 135 graden draaien met de klok mee */
+  /* 2. 25% langer maken */
+  transform: rotate(135deg) scalex(1.25);
+}
+
+/* het tweede streepje */
+section.streepjes
+  li:nth-of-type(3)
+  button[aria-expanded="true"]
+  span:nth-of-type(2) {
+  /* met transform: */
+  /* horizontaal helemaal plat maken */
+  transform: scalex(0);
+}
+
+/* het derde streepje */
+section.streepjes
+  li:nth-of-type(3)
+  button[aria-expanded="true"]
+  span:nth-of-type(3) {
+  /* met transform: */
+  /* 1. 135 graden draaien tegen de klok in */
+  /* 2. 25% langer maken */
+  transform: rotate(-135deg) scalex(1.2);
+}
+
+/* CAROUSEL via Thomas link gekregen naar code vanuit Codepen https://codepen.io/shooft/pen/QWKqzQj*/
+.caroCarrousel {
+  --caroCarrouselMainColor: #422918;
+  --caroCarrouselAccentColor: #a64e17;
+  --caroCarrouselShadeColor: #422918;
+
+  position: relative;
+  outline: none;
+  margin: 1em;
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+  .caroCarrousel {
+    --caroCarrouselMainColor: #ccc;
+    --caroCarrouselShadeColor: #4449;
+  }
+}
+
+/************************************/
+/* de carrousel elementen container */
+.caroCarrousel > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+
+  /* handmatig scrollen is mogelijk */
+  overflow: hidden;
+
+  /* snappen als er gescrolled wordt - andere helft bij li */
+  scroll-snap-type: inline mandatory;
+
+  /* smooth als met js gescrolled wordt */
+  scroll-behavior: smooth;
+
+  /* scrollbar zoveel mogelijk verbergen */
+  -webkit-overflow-scrolling: touch; /* voor iOS*/
+  -ms-overflow-style: none; /* voor IE */
+  scrollbar-width: none; /* voor firefox */
+}
+
+.caroCarrousel > ul::-webkit-scrollbar {
+  /* scrollbar zoveel mogelijk verbergen */
+  display: none; /* voor chrome, safari en edge*/
+}
+
+/**************************/
+/* de carrousel elementen */
+.caroCarrousel > ul li {
+  flex-basis: 100%;
+  flex-shrink: 0;
+  /* snappen als er gescrolled wordt - andere helft bij ul */
+  scroll-snap-align: center;
+}
+
+/**********************************/
+/* de carrousel elementen content */
+
+/* de stijlen voor jouw content hier */
+.caroCarrousel > ul li > img {
+  display: block;
+  width: 100%;
+}
+
+/****************/
+/* DE BOLLETJES */
+/****************/
+
+/* de bolletjes container */
+.caroCarrousel nav ul {
+  position: absolute;
+  left: 2em;
+  right: 2em;
+  bottom: 0;
+  margin: 0;
+  padding: 0 0 0.5em;
+  list-style: none;
+
+  display: flex;
+  /* 	flex-wrap:wrap; */
+  justify-content: center;
+  gap: 0.4em;
+}
+
+/* een bolletje container */
+.caroCarrousel > nav li {
+  flex-basis: 1.2em;
+  aspect-ratio: 1/1;
+}
+
+/* de bolletjes */
+.caroCarrousel > nav a {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  text-decoration: none;
+  color: var(--caroCarrouselMainColor);
+  background-color: var(--caroCarrouselShadeColor);
+  border-radius: 50%;
+  outline: none;
+  box-shadow: inset 0 0 0 1px currentColor;
+
+  transition: 0.5s;
+}
+
+.caroCarrousel > nav a:hover,
+.caroCarrousel > nav a:focus {
+  color: var(--caroCarrouselAccentColor);
+}
+
+.caroCarrousel > nav a.current {
+  background-color: currentColor;
+}
